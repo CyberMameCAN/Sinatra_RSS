@@ -1,0 +1,28 @@
+<ul id="blog">
+<% 	top_value = 0 %>
+<% @rss.items.each do |entry| %>
+<% if top_value < 2 then %>
+	   <li class="topix">
+<%	 top_value += 1; img_size = 600
+	 else 
+	   img_size = 294 %>
+	   <li>
+<% end %>
+	  <%
+		  en = {"Jan"=>1, "Feb"=>2, "Mar"=>3, "Apr"=>4, "May"=>5, "Jun"=>6, "Jul"=>7, "Aug"=>8, "Sep"=>9, "Oct"=>10, "Nov"=>11, "Dec"=>12}
+		  dt = entry.pubDate.to_s.split(' ')
+		  entry_day = sprintf("%s年%s月%s日", dt[3],en[dt[2]],dt[1])
+		%>
+		<p>
+		  <% if entry.enclosure.nil? %>
+				<!-- 画像がないときの処理 -->
+		  <% else %>
+	      <img width="100%" src="<%= entry.enclosure.url %>" />
+	    <% end %>
+	  </p>
+	  <p id="post_day"><%= entry_day %></p>
+	  <H2><a href="<%= entry.link %>"><%= entry.title %></a></h2>
+	  <p><%= entry.category %></p>
+	</li>
+<% end %>
+</ul>

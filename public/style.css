@@ -1,0 +1,47 @@
+body {
+	background: #333 url(kayack.jpg) center center / cover no-repeat fixed;
+}
+h1 {
+	color: #fff;
+}
+a {
+	color: #b3176e;
+	text-decoration: none;
+}
+a:hover {
+	color: rgba(179, 24, 102, 0.69);
+}
+
+#whitebase {
+	width: 100%;
+}
+
+#blog {
+	
+}
+	#blog li {
+		background-color: #fff;
+		border: 1px solid #000;
+	  display: inline-block;
+	  list-style: none;
+	  margin-top: 0.5em;
+	  padding: 2px;
+	  vertical-align: top;
+		width: 24%;
+	}
+		#blog li h2 {
+  		margin-top: 0.75em;
+  		margin-bottom: 0.75em;
+		}
+		#blog li.topix {
+  		width: 48.4%;
+		}
+		#blog li p {
+			margin: 0;
+			padding-top: 0.25em;
+			padding-bottom: 0.25em;
+		}
+		#blog li #post_day {
+			background-color: #eee;
+			font-size: 12px;
+		}
